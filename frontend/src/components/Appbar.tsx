@@ -18,7 +18,7 @@ export const Appbar = ({authorName}:authorName) =>{
                 localStorage.removeItem("token");
                 navigate("/signin");
               }}
-              className="relative mt-1 h-9 w-28 overflow-hidden font-medium text-gray-600 bg-gray-200 border border-gray-100 rounded-lg shadow-inner group" >
+              className="relative mt-1 w-20 md:w-28 lg:w-28  h-9 overflow-hidden font-medium text-gray-600 bg-gray-200 border border-gray-100 rounded-lg shadow-inner group" >
               Signout  
             </button>
             <Link to={`/publish`}>
