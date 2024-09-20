@@ -30,3 +30,22 @@ export const useBlogs = () =>{
         blogs,
     }
 }
+
+export const useBlog = ({id}) => {
+    const[loading ,setLoading] = useState(true);
+    const [blog,setBlog] = useState<Blog>();
+    useEffect(() => {
+        axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
+            headers: { 
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        })
+        .then(res => {
+            setBlog(res.data.blog);
+            setLoading(false);
+        })
+    },[id] )
+    return {
+        loading,blog
+    }
+}
