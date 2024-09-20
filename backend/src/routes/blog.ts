@@ -7,7 +7,7 @@ import { createBlogInput, updateBlogInput } from '@pankajkumardev/medium-common'
 
 export const blogRouter = new Hono<{
   Bindings: {
-      DATABASE_URL: string;
+      DATABASE_URL: string; 
       JWT_SECRET: string;
   },    
   Variables: {
@@ -114,7 +114,16 @@ blogRouter.get('/bulk',async (c) => {
       const blog  = await prisma.post.findFirst({
         where: {
           id : id
-        },
+        }, select : {
+            id : true,
+            title : true,
+            content : true,
+            author : {
+              select : {
+                 name : true
+              }
+            }
+        }
       })
       return c.json({blog})
     } catch (e) {
