@@ -1,9 +1,10 @@
 
+
 import { Blog } from "../hooks/useBlogs";
 import { Appbar } from "./Appbar";
 import { Avatar } from "./BlogCard";
 
-export const FullBlog = ({ blog }: { blog: Blog }) => {
+export const FullBlog = ({blog} : {blog : Blog}) => {
   return (
     <>
       <Appbar

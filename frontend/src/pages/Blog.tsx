@@ -4,11 +4,11 @@ import { Appbar } from "../components/Appbar";
 import BlogSkeleton2 from "../components/BlogSkeleton2";
 import { FullBlog } from "../components/FullBlog";
 
-const Blog = () => {
+export const Blog = () => {
   const { id } = useParams();
   const{loading, blog } = useBlog({
     id : id || ""
-  })
+  });
   if(loading) {
     return <div>
       <Appbar
@@ -21,11 +21,16 @@ const Blog = () => {
     </div>
     </div>
   }
-   return (
+  return (
     <div>
-      <FullBlog blog={blog} />
+      {blog ? (
+        <FullBlog blog={blog} />
+      ) : (
+        <div>
+          <Appbar authorName="P" />
+          <div>Blog not found</div>
+        </div>
+      )}
     </div>
-  )
-}
-
-export default Blog  
+  );
+};
