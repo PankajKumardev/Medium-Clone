@@ -16,7 +16,7 @@ export const FullBlog = ({blog} : {blog : Blog}) => {
             <div className="pt-3 h-screen">{blog.content}</div>
             
           </div>
-          <div className="lg:col-span-4 hidden lg:block ">
+          <div className="lg:col-span-4 hidden lg:block ml-20 ">
             <div className="flex justify-center gap-2">
               <div className="flex flex-col justify-center">
                 <Avatar size="big" name={blog.author.name || "Anonymous"} />
