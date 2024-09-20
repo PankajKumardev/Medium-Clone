@@ -1,5 +1,3 @@
-
-
 import { Blog } from "../hooks/useBlogs";
 import { Appbar } from "./Appbar";
 import { Avatar } from "./BlogCard";
