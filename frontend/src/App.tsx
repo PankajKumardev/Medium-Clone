@@ -24,16 +24,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
-
         <Route element={<ProtectedRoute />}>
           <Route path="/Blog/:id" element={<Blog />} />
           <Route path="/Blogs" element={<Blogs />} />
           <Route path="/publish" element={<Publish />} />
         </Route>
-
         <Route path="*" element={<Navigate to="/signin" replace />} />
       </Routes>
     </BrowserRouter>
