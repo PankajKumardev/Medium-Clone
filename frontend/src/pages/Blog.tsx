@@ -4,7 +4,7 @@ import { Appbar } from "../components/Appbar";
 import BlogSkeleton2 from "../components/BlogSkeleton2";
 import { FullBlog } from "../components/FullBlog";
 
-export const Blog = () => {
+ const Blog = () => {
   const { id } = useParams();
   const{loading, blog } = useBlog({
     id : id || ""
@@ -34,3 +34,5 @@ export const Blog = () => {
     </div>
   );
 };
+
+export default Blog
