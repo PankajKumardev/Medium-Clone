@@ -5,6 +5,7 @@ import Signin from './pages/Signin';
 import Blog from './pages/Blog';
 import Blogs from './pages/Blogs';
 import Publish from './pages/Publish';
+import { Analytics } from "@vercel/analytics/react"
 
 const isAuthenticated = (): boolean => {
   const token = localStorage.getItem("token");
@@ -23,6 +24,7 @@ const ProtectedRoute = () => {
 function App() {
   return (
     <BrowserRouter>
+    <Analytics/>
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
